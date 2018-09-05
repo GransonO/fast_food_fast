@@ -304,6 +304,16 @@ ul li ul li:hover {
 .orders-wrapper-2 {
     flex: 2;
 }
+.maps-wrapper{
+    flex: 2;
+    height: 100%;
+    padding: 5px;
+    border-radius: 10px;
+}
+.maps-image {
+    border: 5px pink solid;
+    border-radius: 10px;
+ }
 
 .remove_btn {
     border-radius: 10px;
