@@ -87,7 +87,7 @@ html{
 /*styling href links*/
 a{
     color: rgb(250, 250, 250);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 2em;
     font-weight: bold;
 }
@@ -129,9 +129,8 @@ a{
 }
 
 .nav {
-    padding-left: 10%;
     position: fixed;
-    z-index: 1;
+    margin-top: 5%;
 }
 
 .nav ul {
@@ -139,12 +138,12 @@ a{
 }
 
 ul li{
-    float: right;
     width: 200px;
     height: 40px;
     background-color: rgba(252, 143, 176);  
     line-height: 40px;
     text-align: center;
+    text-decoration: none;
     font-size: 20px; 
     font-weight:100;
     color: rgb(49, 49, 49);
@@ -152,6 +151,9 @@ ul li{
     margin-right: 5px;
     border-top-right-radius: 50%;
     border-top-left-radius: 50%;
+}
+.li-top{
+    margin-top: 30px;
 }
 
 ul li:hover {
@@ -164,15 +166,19 @@ ul li ul li{
     line-height: 40px;
     text-align: center;
     margin-right: 0px;
+    margin-left: 160px;
+    text-decoration: none;
+    z-index: 1;
     border: 2px #fff solid;
     border-top-right-radius: 5%;
     border-top-left-radius: 5%;
     display: none;
-    width: 250px;
+    width: 150px;
 }
 
 ul li:hover ul li{
     display: block;
+    width: 150px;
 }
 
 ul li ul li:hover {
@@ -203,18 +209,32 @@ ul li ul li:hover {
     color:  rgb(255, 70, 125);
     width: 200px;
 }
-
+.title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    color: palevioletred;
+    position: relative;
+    margin-top: 0%;
+    text-align:center;
+}
 .action-btn {
     text-align: center;
     margin-top: -35px;
 }
 .wrapper{
-    position: relative;
-    top: 100px;
+    display: flex;
     width: 100%;
-    padding-left: 10%;
 }
-
+.wrapper1{
+    flex:0.5;
+    margin-left: 2%;
+}
+.wrapper2{
+    flex:2.5;
+    margin-left: 10%;
+    align-items: center;
+}
 .card {
     width: 300px;
     background-color: rgb(252, 143, 176);
@@ -233,7 +253,7 @@ ul li ul li:hover {
     font-size: 18px;
     position: relative;
     top: -50px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .item-details h4{
     color: rgb(51, 50, 50);
@@ -241,13 +261,13 @@ ul li ul li:hover {
     position: relative;
     left: 200px;
     top: -10px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .item-details p{
     color: rgb(66, 66, 66);
     font-size: 13px;
     position: relative;
     top: -50px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
 }
