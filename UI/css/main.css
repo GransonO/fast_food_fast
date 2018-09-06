@@ -127,6 +127,7 @@ a{
     border: 2px solid rgb(255, 255, 255, o.5);
     padding: 5px; 
     color: rgb(0, 0, 0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 100;
     font-style: oblique;
     font-size: 16px;
@@ -152,6 +153,7 @@ ul li{
     font-size: 20px; 
     font-weight:100;
     color: rgb(49, 49, 49);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border: 2px #fff solid;
     margin-right: 5px;
     border-top-right-radius: 50%;
@@ -173,6 +175,7 @@ ul li ul li{
     margin-right: 0px;
     margin-left: 160px;
     text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     z-index: 1;
     border: 2px #fff solid;
     border-top-right-radius: 5%;
@@ -263,7 +266,7 @@ ul li ul li:hover {
 
 .orders-title {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     color: palevioletred;
     position: relative;
@@ -368,4 +371,77 @@ ul li ul li:hover {
     font-size: 25px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
+}
+.data_wrapper {
+    display: flex;
+    justify-content:center;
+    margin-inline-start: 2%;
+}
+.data_wrapper1 {
+    flex: 1;
+    margin: 10px;
+    -ms-flex-item-align: center;
+}
+.data_wrapper2 {
+    flex: 1;
+}
+.data_wrapper3 {
+    flex: 1;
+}
+.data_wrapper4 {
+    flex: 1;
+}
+
+.info-item {
+    width: 70%;
+    background-color:  palevioletred;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.flex-layer {
+    width: 100%;
+    text-align: center;
+}
+
+.add_item {
+    width: 80%;
+    margin: 2px;
+    margin-left: 2%;
+    padding: 10px;
+    height: 300px;
+    border: 2px #fff solid;
+    background: pink;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 10px;
+}
+
+.new-img {
+    float: left;
+    width: 300px;
+    position: relative;
+    margin: 10px;
+    border: #fff 2px solid;
+    border-radius: 10px; 
+}
+.custom_input_textarea{
+    border-radius: 10px;
+    width: 400px;
+    height: 70px;
+    background-color: rgba(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255, o.5);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 5px; 
+    color: rgb(0, 0, 0);
+    font-weight: 100;
+    font-style: oblique;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.action-items-btn {
+    position: relative;
+    bottom : 250px;
+    left: 600px;
 }
