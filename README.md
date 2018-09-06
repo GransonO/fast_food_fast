@@ -1,37 +1,15 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/GransonO/fast_food_fast/edit/gh-pages/README.md) to maintain and preview the content for your website in Markdown files.
+# fast_food_fast
+A food delivery web application aimed at testing my understanding of HTML, CSS and Javascript... Languages necessary fro the web development challenges
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This is the first of a four part series of tests aimed at gauging the level of understanding and the willingness to understand key concepts necessary for web apps development.
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/GransonO/fast_food_fast/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+# Necessary Guidelines
+### User signup and signin pages.
+### A page where a user should be able to order for food.
+### A page where the Admin can do the following:
+### See a list of orders.
+### Accept and decline orders.
+### Mark orders as completed.
+### A user should be able to see a history of ordered food.
+No usage of web frameworks in the project. All ideas born from the root.
