@@ -9,5 +9,6 @@ def create_app(config_state):
     
     if(config_state == 'TESTING'):
         app.config['TESTING'] = True
+        app.config['DEBUG'] = True
 
     return app
