@@ -14,3 +14,18 @@ class savedData():
         savedData.Orders.append(passed_order)
 
         return savedData.Orders
+
+    def getSpecificOrder(self,id):
+        '''Retrieves a specific item and sends back to user '''
+        num = id - 1
+        if len(savedData.Orders) >= num:
+            item = savedData.Orders[num]
+            return item
+        else:
+            return "Couldn't find what you were looking for" 
+
+        #for order in savedData.Orders:
+        #    if order['id'] == id:
+        #        my_item = order 
+        #    else:
+        #        my_item = "Couldn't find what you were looking for"    

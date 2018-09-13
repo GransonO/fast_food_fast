@@ -33,10 +33,18 @@ class GeneralRequests(Resource):
 
         return {'data':results}, 201
 
-   
+class SpecificRequests(Resource):
+    '''Processes specific put and get requests'''
+    def get(self,num):
+        '''Retrieves a specific order'''
+        results = savedData.getSpecificOrder(self,num)
+
+        return {'data' : results}, 202
+       
 
 api.add_resource(Home,'/home')
 api.add_resource(GeneralRequests,'/v1/orders')
+api.add_resource(SpecificRequests,'/v1/orders/<int:num>')
 
 if __name__ == '__main__':
     my_app.run()
