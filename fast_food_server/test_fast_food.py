@@ -13,3 +13,16 @@ def test_home(app_test):
 def test_development(app_test):
     response = app_test.get('/home')
     assert b"this is home" in response.data
+
+#Get all orders
+def test_get_all(app_test):
+    '''Test for get call orders'''
+    response = app_test.get('/v1/orders')
+    assert response.status_code == 202
+
+def test_get_all_i(app_test):
+    '''Test for get call orders'''
+    response = app_test.get('/v1/orders')
+    assert b"Cake" in response.data
+    assert b"quantity" in response.data
+    assert b"Pizza" in response.data

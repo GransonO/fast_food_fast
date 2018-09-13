@@ -12,7 +12,12 @@ test_orders = [{'id':1,'name':'Cake','amount':'2000','quantity':10},{'id':2,'nam
 @my_app.route('/home')
 def home():
     return 'this is home'
-  
+
+#Test for all orders
+@my_app.route('/v1/orders', methods=['GET'])
+def get_all():
+    '''Test for get call orders'''
+    return jsonify(test_orders), 202
 
 @pytest.fixture
 def app_test():
