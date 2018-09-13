@@ -22,10 +22,18 @@ class savedData():
             item = savedData.Orders[num]
             return item
         else:
-            return "Couldn't find what you were looking for" 
+            return "Couldn't find what you were looking for"
 
-        #for order in savedData.Orders:
-        #    if order['id'] == id:
-        #        my_item = order 
-        #    else:
-        #        my_item = "Couldn't find what you were looking for"    
+    def updateOrder(self,id,name,amount,quantity):
+        '''Updates an order in the list'''
+        num = id - 1
+        if len(savedData.Orders) >= num:
+            item = savedData.Orders[num]
+            '''Edit all entries'''
+            item['name'] = name
+            item['amount'] = amount
+            item['quantity'] = quantity
+
+            return savedData.Orders
+        else:
+            return "Couldn't find what you were looking for"
