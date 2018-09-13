@@ -26,3 +26,15 @@ def test_get_all_i(app_test):
     assert b"Cake" in response.data
     assert b"quantity" in response.data
     assert b"Pizza" in response.data
+
+#Get specific order
+def test_get_specific(app_test):
+    '''Test for getting a specific order'''
+    response = app_test.get('/v1/orders/1')
+    assert b"Pizza" in response.data
+    assert b"1500" in response.data
+
+def test_get_specific_i(app_test):
+    '''Test for getting a specific order'''
+    response = app_test.get('/v1/orders/1')
+    assert response.status_code == 200

@@ -19,6 +19,12 @@ def get_all():
     '''Test for get call orders'''
     return jsonify(test_orders), 202
 
+@my_app.route('/v1/orders/<int:num>')
+def get_specified(num):
+    '''Test for getting a specific order'''
+    return jsonify(test_orders[num]), 200
+
+
 @pytest.fixture
 def app_test():
     '''Creates a fixture for the flask app
