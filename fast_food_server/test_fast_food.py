@@ -51,3 +51,14 @@ def test_post_i(app_test):
     assert b"Mango" in response.data
     assert b"200" in response.data
     assert b"20" in response.data    
+
+#Updating orders
+def test_update(app_test):
+    '''Test for updating an order'''
+    response = app_test.get('/v1/orders/2')
+    assert response.status_code == 200
+
+def test_update_i(app_test):
+    '''Test for updating an order'''
+    response = app_test.put('/v1/orders/1', json=put_data)
+    assert b"Guava" in response.data

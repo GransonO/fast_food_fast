@@ -38,6 +38,16 @@ def post_order():
     test_orders.append(new_entry)
     return jsonify(test_orders), 201
 
+@my_app.route('/v1/orders/<int:count>', methods=['PUT'])
+def put_update_data(count):
+    """call to edit an entry"""
+
+    result = [test_order for test_order in test_orders if test_order['id'] == count]
+    result[0]['name'] = request.json['name']
+    result[0]['amount'] = request.json['amount']
+    result[0]['quantity'] = request.json['quantity']
+    return jsonify(test_orders), 202 
+
 @pytest.fixture
 def app_test():
     '''Creates a fixture for the flask app
