@@ -38,3 +38,16 @@ def test_get_specific_i(app_test):
     '''Test for getting a specific order'''
     response = app_test.get('/v1/orders/1')
     assert response.status_code == 200
+
+#Posting orders
+def test_post(app_test):
+    '''Test for posting a new order'''
+    response = app_test.post('/v1/orders', json=test_data)
+    assert response.status_code == 201
+
+def test_post_i(app_test):
+    '''Test for posting a new order'''
+    response = app_test.post('/v1/orders',json=test_data)
+    assert b"Mango" in response.data
+    assert b"200" in response.data
+    assert b"20" in response.data    

@@ -24,6 +24,19 @@ def get_specified(num):
     '''Test for getting a specific order'''
     return jsonify(test_orders[num]), 200
 
+@my_app.route('/v1/orders', methods=['POST'])
+def post_order():
+    '''Test for posting a new order'''
+    id = len(test_orders) + 1
+    
+    name = request.json["name"]
+    amount = request.json['amount']
+    quantity = request.json['quantity']
+
+    new_entry = {'id':id,'name':name,'amount':amount,'quantity':quantity}
+
+    test_orders.append(new_entry)
+    return jsonify(test_orders), 201
 
 @pytest.fixture
 def app_test():
