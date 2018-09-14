@@ -8,7 +8,7 @@ def create_app(config_state):
         necessary configurations passed in '''
     app = Flask(__name__)
 
-    if config_state == 'TESTING':
+    if (config_state == 'TESTING'):
         app.config['TESTING'] = True
         app.config['DEBUG'] = True
 
