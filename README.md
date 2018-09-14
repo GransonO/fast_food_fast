@@ -1,6 +1,10 @@
 # fast_food_fast
 A food delivery web application aimed at testing my understanding of HTML, CSS and Javascript... Languages necessary fro the web development challenges
 
+[![Coverage Status](https://coveralls.io/repos/github/GransonO/fast_food_fast/badge.svg?branch=develop)](https://coveralls.io/github/GransonO/fast_food_fast?branch=develop)
+
+[![Test Coverage](https://api.codeclimate.com/v1/badges/21af8073dc13173e9504/test_coverage)](https://codeclimate.com/github/GransonO/fast_food_fast/test_coverage)
+
 # Flask Server Implementation
 ### What should be implemented
 #### Server-Side Framework: <Flask Python Framework>
