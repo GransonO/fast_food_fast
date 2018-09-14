@@ -1,4 +1,5 @@
 ''' The main starter for the application'''
+from os import environ
 from flask_restplus import Resource, Api, fields
 import app
 from dataset.data_handler import SavedData
