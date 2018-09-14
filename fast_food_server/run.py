@@ -60,4 +60,4 @@ API.add_resource(GeneralRequests, '/v1/orders')
 API.add_resource(SpecificRequests, '/v1/orders/<int:num>')
 
 if __name__ == '__main__':
-    MY_APP.run()
+    MY_APP.run(host='0.0.0.0',port=environ.get("PORT", 5000))
