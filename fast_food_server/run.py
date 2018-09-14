@@ -1,28 +1,16 @@
-''' The main starter for the application'''
-from flask_restplus import Resource, Api
 import app
-from dataset.data_handler import savedData
-
-MY_APP = app.create_app('TESTING')
-API = Api(MY_APP)
+from flask import Flask
+from flask_restplus import Resource, Api
+my_app = app.create_app('TESTING')
+api = Api(my_app)
+Orders = []
 
 class Home(Resource):
-    '''Redirects to home page'''
-
-    def get(self): #pylint: disable=no-self-use
-        '''Redirects to home page'''
-        return {'data':'This is home'}
-
-class GeneralRequests(Resource):
-    ''' Processes the get all and post requests'''
-
     def get(self):
-        '''Retrieves all items and pass them back to user'''
-        result = savedData.allOrders(self)
-        return {'data': result}
+        return {'data':'This is home'}
+   
 
-API.add_resource(Home, '/home')
-API.add_resource(GeneralRequests, '/v1/orders')
+api.add_resource(Home,'/home')
 
 if __name__ == '__main__':
-    MY_APP.run()
+    my_app.run()
