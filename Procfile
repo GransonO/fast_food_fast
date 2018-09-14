@@ -1,1 +1,1 @@
-gunicorn: python-3.5.2 fast_food_server/run.py
+gunicorn: python fast_food_server/run.py
