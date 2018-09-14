@@ -43,6 +43,18 @@ class SpecificRequests(Resource):
 
         return {'data' : results}, 202
 
+    @API.expect(PROP_ORDER)
+    def put(self, num):
+        '''Edits content of a specified order'''
+        update_data = API.payload
+
+        name = update_data['name']
+        amount = update_data['amount']
+        quantity = update_data['quantity']
+        results = SavedData.update_order(self, num, name, amount, quantity)
+
+        return {'data': results}
+
 API.add_resource(Home, '/home')
 API.add_resource(GeneralRequests, '/v1/orders')
 API.add_resource(SpecificRequests, '/v1/orders/<int:num>')

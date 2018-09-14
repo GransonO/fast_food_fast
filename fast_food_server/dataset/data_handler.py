@@ -18,33 +18,25 @@ class SavedData():
 
     def get_specific_order(self, order_id):#pylint: disable=no-self-use
         '''Retrieves a specific item and sends back to user '''
-<<<<<<< HEAD
         item = "Couldn't find what you were looking for"
         num = order_id - 1
         if len(SavedData.Orders) >= 1:
             item = SavedData.Orders[num]
 
         return item
-=======
-        num = id - 1
-        if len(savedData.Orders) >= num:
-            item = savedData.Orders[num]
-            return item
-        else:
-            return "Couldn't find what you were looking for"
 
-    def updateOrder(self,id,name,amount,quantity):
+
+    def update_order(self, num, name, amount, quantity):#pylint: disable=no-self-use
         '''Updates an order in the list'''
-        num = id - 1
-        if len(savedData.Orders) >= num:
-            item = savedData.Orders[num]
-            '''Edit all entries'''
+        results = "Couldn't find what you were looking for"
+        num = num - 1
+        if len(SavedData.Orders) >= num:
+            item = SavedData.Orders[num]
+
             item['name'] = name
             item['amount'] = amount
             item['quantity'] = quantity
 
-            return savedData.Orders
-        else:
-            return "Couldn't find what you were looking for"
-          
->>>>>>> 187e27618cf67ded9c1df1b4a08bb5b1cde6be34
+            results = SavedData.Orders
+
+        return results
