@@ -22,7 +22,6 @@ env:
     - CC_TEST_REPORTER_ID=[db423a97246870ddf046b2b34fc7aeaf1c19c08c2b097721db789a0e15812396]
 
 script:
-#  - pylint backend/test_app.py # or py.test for Python versions 3.6 and below
   - coverage erase
   - coverage run test_fast_food.py && coverage html
   - py.test --cov test_fast_food.py
