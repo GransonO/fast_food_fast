@@ -1,7 +1,5 @@
 '''Creates the factory app'''
 from flask import Flask
-from config import config_status
-
 
 def create_app(config_state):
     '''Creates an instance of the app with necessary configurations passed in '''

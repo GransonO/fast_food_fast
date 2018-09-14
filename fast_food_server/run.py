@@ -1,9 +1,9 @@
 ''' The main starter for the application'''
-from flask_restplus import Resource, Api
+from flask_restplus import Resource, Api, fields
 import app
 from dataset.data_handler import savedData
 
-my_app = app.create_app('TESTING')
+my_app = app.create_app(None)
 api = Api(my_app)
 
 
