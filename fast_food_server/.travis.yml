@@ -3,6 +3,7 @@ language: python
 python:
   - "3.5"
   - "3.6"
+<<<<<<< HEAD
 
 # command to install dependencies
 install:
@@ -38,3 +39,5 @@ after_script:
 after_success:
   - codecov
   - coveralls
+=======
+>>>>>>> 5ff4061736f4bc09be6a36b230077e65dd07b999
