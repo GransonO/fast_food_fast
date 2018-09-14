@@ -19,7 +19,7 @@ class GeneralRequests(Resource):
     def get(self):
         '''Retrieves all items and pass them back to user'''
         result = savedData.allOrders(self)
-        return {'data': result}
+        return {'data': result}, 200
 
 API.add_resource(Home, '/home')
 API.add_resource(GeneralRequests, '/v1/orders')
