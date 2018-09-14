@@ -1,0 +1,39 @@
+language: python
+
+python:
+  - "3.5"
+  - "3.6"
+# command to install dependencies
+install:
+  - pip install -r requirements.txt
+  - pip install codecov
+  - pip install pytest-cov
+# Configuration to code climate
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter 
+  - ./cc-test-reporter before-build
+
+# for codecoverage on codeclimate.com
+env:
+  global:
+    - GIT_COMMITTED_AT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git log -1 --pretty=format:%ct; else git log -1 --skip 1 --pretty=format:%ct; fi)
+#   - CODECLIMATE_REPO_TOKEN=[token]
+    - CC_TEST_REPORTER_ID=[db423a97246870ddf046b2b34fc7aeaf1c19c08c2b097721db789a0e15812396]
+
+script:
+#  - pylint backend/test_app.py # or py.test for Python versions 3.6 and below
+  - coverage erase
+  - coverage run test_fast_food.py && coverage html
+  - py.test --cov test_fast_food.py
+  - pylint --output-format=text app/
+  - pylint --output-format=text dataset/data_handler_app.py
+  - pylint --output-format=text conftest.py
+  - pylint --output-format=text test_fast_food.py
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+
+after_success:
+  - codecov
+  - coveralls
