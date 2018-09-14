@@ -1,25 +1,26 @@
 '''Class for processing data from requests'''
-class savedData():
+class SavedData():
+    '''Called from the run function'''
 
     Orders = [{'id': 1, 'name':'Default item', 'amount':10, 'quantity': 2}]
 
-    def allOrders(self):
+    def all_orders(self):#pylint: disable=no-self-use
         '''Passes the list items back to user'''
-        return savedData.Orders
+        return SavedData.Orders
 
-    def addOrders(self, name, amount, quantity):
+    def add_orders(self, name, amount, quantity):#pylint: disable=no-self-use
         '''Adds an order to the orders list'''
-        id = len(savedData.Orders) + 1
-        passed_order = {'id': id, 'name': name, 'amount' : amount, 'quantity' : quantity}
-        savedData.Orders.append(passed_order)
+        order_id = len(SavedData.Orders) + 1
+        passed_order = {'id': order_id, 'name': name, 'amount' : amount, 'quantity' : quantity}
+        SavedData.Orders.append(passed_order)
 
-        return savedData.Orders
+        return SavedData.Orders
 
-    def getSpecificOrder(self, id):
+    def get_specific_order(self, order_id):#pylint: disable=no-self-use
         '''Retrieves a specific item and sends back to user '''
-        num = id - 1
-        if len(savedData.Orders) >= num:
-            item = savedData.Orders[num]
-            return item
-        else:
-            return "Couldn't find what you were looking for" 
+        item = "Couldn't find what you were looking for"
+        num = order_id - 1
+        if len(SavedData.Orders) >= 1:
+            item = SavedData.Orders[num]
+
+        return item

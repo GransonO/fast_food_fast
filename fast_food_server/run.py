@@ -1,19 +1,18 @@
 ''' The main starter for the application'''
 from flask_restplus import Resource, Api, fields
 import app
-from dataset.data_handler import savedData
+from dataset.data_handler import SavedData
 
-my_app = app.create_app(None)
-api = Api(my_app)
+MY_APP = app.create_app(None)
+API = Api(MY_APP)
 
 
-properties_order = api.model('order',{'name' : fields.String('Name of what to order'),
-'amount' : fields.Integer('Price of order'),'quantity' : fields.Integer('Quantity of items')})
+PROP_ORDER = API.model('order', {'name' : fields.String('Name of what to order'), 'amount' : fields.Integer('Price of order'), 'quantity' : fields.Integer('Quantity of items')}) #pylint: disable=line-too-long
 
 class Home(Resource):
     '''Redirects to home page'''
 
-    def get(self): #pylint: disable=no-self-use
+    def get(self):#pylint: disable=no-self-use
         '''Redirects to home page'''
         return {'data':'This is home'}
 
@@ -22,32 +21,31 @@ class GeneralRequests(Resource):
 
     def get(self):
         '''Retrieves all items and pass them back to user'''
-        result = savedData.allOrders(self)
+        result = SavedData.all_orders(self)
         return {'data': result}, 200
 
-    @api.expect(properties_order)
+    @API.expect(PROP_ORDER)
     def post(self):
         '''Adds an order to the items list'''
-        my_order = api.payload
+        my_order = API.payload
         name = my_order['name']
         amount = my_order['amount']
         quantity = my_order['quantity']
-        results = savedData.addOrders(self,name, amount, quantity)
+        results = SavedData.add_orders(self, name, amount, quantity)
 
         return {'data':results}, 201
 
 class SpecificRequests(Resource):
     '''Processes specific put and get requests'''
-    def get(self,num):
+    def get(self, num):
         '''Retrieves a specific order'''
-        results = savedData.getSpecificOrder(self,num)
+        results = SavedData.get_specific_order(self, num)
 
         return {'data' : results}, 202
-       
 
-api.add_resource(Home,'/home')
-api.add_resource(GeneralRequests,'/v1/orders')
-api.add_resource(SpecificRequests,'/v1/orders/<int:num>')
+API.add_resource(Home, '/home')
+API.add_resource(GeneralRequests, '/v1/orders')
+API.add_resource(SpecificRequests, '/v1/orders/<int:num>')
 
 if __name__ == '__main__':
-    my_app.run()
+    MY_APP.run()

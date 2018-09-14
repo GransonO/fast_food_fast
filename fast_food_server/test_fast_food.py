@@ -1,16 +1,16 @@
-'''For the testing, I have employed the use of vanilla flask in 
+'''For the testing, I have employed the use of vanilla flask in
 place of the restplus due to difficulties found in testing apis'''
 
-test_data = {"name":"Mango","amount":200,"quantity":20}
-put_data = {"name":"Guava","amount":250,"quantity":25}
+TEST_DATA = {"name":"Mango", "amount":200, "quantity":20}
+PUT_DATA = {"name":"Guava", "amount":250, "quantity":25}
 
-'''Test for home return'''
 def test_home(app_test):
+    '''Test for home return'''
     response = app_test.get('/home')
     assert response.status_code == 200
 
-'''Test for returned get value from home'''
 def test_development(app_test):
+    '''Test for returned get value from home'''
     response = app_test.get('/home')
     assert b"this is home" in response.data
 
@@ -42,15 +42,15 @@ def test_get_specific_i(app_test):
 #Posting orders
 def test_post(app_test):
     '''Test for posting a new order'''
-    response = app_test.post('/v1/orders', json=test_data)
+    response = app_test.post('/v1/orders', json=TEST_DATA)
     assert response.status_code == 201
 
 def test_post_i(app_test):
     '''Test for posting a new order'''
-    response = app_test.post('/v1/orders',json=test_data)
+    response = app_test.post('/v1/orders', json=TEST_DATA)
     assert b"Mango" in response.data
     assert b"200" in response.data
-    assert b"20" in response.data    
+    assert b"20" in response.data
 
 #Updating orders
 def test_update(app_test):
@@ -60,5 +60,5 @@ def test_update(app_test):
 
 def test_update_i(app_test):
     '''Test for updating an order'''
-    response = app_test.put('/v1/orders/1', json=put_data)
+    response = app_test.put('/v1/orders/1', json=PUT_DATA)
     assert b"Guava" in response.data
