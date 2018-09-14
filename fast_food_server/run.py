@@ -3,8 +3,8 @@ from flask_restplus import Resource, Api
 import app
 from dataset.data_handler import savedData
 
-MY_APP = app.create_app('TESTING')
-API = Api(MY_APP)
+my_app = app.create_app('TESTING')
+api = Api(my_app)
 
 class Home(Resource):
     '''Redirects to home page'''
@@ -21,8 +21,8 @@ class GeneralRequests(Resource):
         result = savedData.allOrders(self)
         return {'data': result}, 200
 
-API.add_resource(Home, '/home')
-API.add_resource(GeneralRequests, '/v1/orders')
+api.add_resource(Home, '/home')
+api.add_resource(GeneralRequests, '/v1/orders')
 
 if __name__ == '__main__':
-    MY_APP.run()
+    my_app.run()
