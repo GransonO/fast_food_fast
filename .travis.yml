@@ -28,7 +28,7 @@ script:
   - coverage run fast_food_server/test_fast_food.py && coverage html
   - py.test --cov fast_food_server/test_fast_food.py
   - pylint --output-format=text fast_food_server/app/
-  - pylint --output-format=text fast_food_server/dataset/data_handler_app.py
+  - pylint --output-format=text fast_food_server/dataset/data_handler.py
   - pylint --output-format=text fast_food_server/conftest.py
   - pylint --output-format=text fast_food_server/test_fast_food.py
 
