@@ -1,1 +1,1 @@
-web: python fast_food_server/run.py
+web: python-3.5.2 fast_food_server/run.py
