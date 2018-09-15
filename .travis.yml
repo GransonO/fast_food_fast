@@ -15,13 +15,6 @@ before_script:
   - chmod +x ./cc-test-reporter 
   - ./cc-test-reporter before-build
 
-# for codecoverage on codeclimate.com
-env:
-  global:
-    - GIT_COMMITTED_AT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git log -1 --pretty=format:%ct; else git log -1 --skip 1 --pretty=format:%ct; fi)
-    - CODECLIMATE_REPO_TOKEN=[acedb8e944d28f8feb7a5a9a1bd59c048b1f43a6]
-    - CC_TEST_REPORTER_ID=[db423a97246870ddf046b2b34fc7aeaf1c19c08c2b097721db789a0e15812396]
-
 script:
 # scripts to run
   - coverage erase
