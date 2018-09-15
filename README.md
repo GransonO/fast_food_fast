@@ -3,9 +3,7 @@ A food delivery web application aimed at testing my understanding of HTML, CSS a
 
 [![Build Status](https://travis-ci.com/GransonO/fast_food_fast.svg?branch=develop)](https://travis-ci.com/GransonO/fast_food_fast)
 
-[![Coverage Status](https://coveralls.io/repos/github/GransonO/fast_food_fast/badge.svg?branch=develop)](https://coveralls.io/github/GransonO/fast_food_fast?branch=develop)
-
-[![Test Coverage](https://api.codeclimate.com/v1/badges/21af8073dc13173e9504/test_coverage)](https://codeclimate.com/github/GransonO/fast_food_fast/test_coverage)
+<a href='https://coveralls.io/github/GransonO/fast_food_fast'><img src='https://coveralls.io/repos/github/GransonO/fast_food_fast/badge.svg' alt='Coverage Status' /></a><a href="https://codeclimate.com/github/GransonO/fast_food_fast/test_coverage"><img src="https://api.codeclimate.com/v1/badges/21af8073dc13173e9504/test_coverage" /></a><a href="https://codeclimate.com/github/GransonO/fast_food_fast/maintainability"><img src="https://api.codeclimate.com/v1/badges/21af8073dc13173e9504/maintainability" /></a>
 
 # Flask Server Implementation
 ### What should be implemented
